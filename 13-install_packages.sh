@@ -14,7 +14,7 @@ if [ $? -ne 0 ]; then
     echo -e "$R Error: Please run the script with user access $N"
     exit 1
 else
-    echo "$G You are root user $N"
+    echo "You are root user"
 fi
 
 validate() {
