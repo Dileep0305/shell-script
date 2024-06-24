@@ -27,9 +27,9 @@ validate() {
 }
 
 for package in $@; do
-    yum list installed $package $ >>$LOGFILE
+    yum list installed $package &>>$LOGFILE
     if [ $? -ne 0 ]; then
-        yum install $package -y $ >>$LOGFILE
+        yum install $package -y &>>$LOGFILE
         validate $? "Installing of $package "
     else
         echo -e "$package is already installed ... $Y skipping $N"
